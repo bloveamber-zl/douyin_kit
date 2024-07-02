@@ -16,12 +16,12 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.platform = :ios, '9.0'
+  s.platform = :ios, '12.0'
 
   # v1.8.7.1
   s.static_framework = true
   s.subspec 'vendor' do |sp|
-    sp.dependency 'DouyinOpenSDK', '~> 4.0.0'
+    sp.dependency 'DouyinOpenSDK', '~> 4.1.8'
     sp.dependency 'KwaiSDK', '~> 3.6.5'
 
   end

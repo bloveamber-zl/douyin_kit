@@ -135,6 +135,8 @@ class Douyin {
   ///
   Future<void> shareImage({
     required List<Uri> imageUris,
+    List<String>? hashTags,
+    String? title,
     String? state,
   }) {
     assert(imageUris.length <= 12 /*Android 抖音12.3.0时为35*/);
@@ -144,6 +146,8 @@ class Douyin {
       <String, dynamic>{
         'image_uris':
             imageUris.map((Uri element) => element.toString()).toList(),
+        if (hashTags != null) 'hash_tags': hashTags,
+        if (title != null) 'title': title,
         if (state != null) 'state': state,
       },
     );
@@ -152,6 +156,8 @@ class Douyin {
   ///
   Future<void> shareVideo({
     required List<Uri> videoUris,
+    List<String>? hashTags,
+    String? title,
     String? state,
   }) {
     assert(videoUris.length <= 12);
@@ -161,6 +167,8 @@ class Douyin {
       <String, dynamic>{
         'video_uris':
             videoUris.map((Uri element) => element.toString()).toList(),
+        if (hashTags != null) 'hash_tags': hashTags,
+        if (title != null) 'title': title,
         if (state != null) 'state': state,
       },
     );
@@ -177,6 +185,22 @@ class Douyin {
       <String, dynamic>{
         'video_uris':
             videoUris.map((Uri element) => element.toString()).toList(),
+        if (state != null) 'state': state,
+      },
+    );
+  }
+
+  Future<void> ksShareImage({
+    required List<Uri> imageUris,
+    String? state,
+  }) {
+    assert(imageUris.length <= 12);
+    assert(imageUris.every((Uri element) => element.isScheme('file')));
+    return _channel.invokeMethod<void>(
+      'ksShareImage',
+      <String, dynamic>{
+        'image_uris':
+            imageUris.map((Uri element) => element.toString()).toList(),
         if (state != null) 'state': state,
       },
     );

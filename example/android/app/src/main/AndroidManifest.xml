@@ -47,4 +47,5 @@
         <package android:name="com.ss.android.ugc.aweme" />
         <package android:name="com.ss.android.ugc.aweme.lite" />
     </queries>
+    
 </manifest>

@@ -28,12 +28,12 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 34
 
     resourcePrefix 'douyin_kit'
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
 
 
         manifestPlaceholders = [
@@ -63,10 +63,12 @@ android {
 }
 
 dependencies {
-    implementation 'com.bytedance.ies.ugc.aweme:opensdk-china-external:0.1.8.0'
-    implementation 'com.bytedance.ies.ugc.aweme:opensdk-common:0.1.8.0'
+    // implementation 'com.bytedance.ies.ugc.aweme:opensdk-china-external:0.1.8.0'
+    // implementation 'com.bytedance.ies.ugc.aweme:opensdk-common:0.1.8.0'
+    implementation 'com.bytedance.ies.ugc.aweme:opensdk-china-external:0.2.0.2'
+    implementation 'com.bytedance.ies.ugc.aweme:opensdk-common:0.2.0.2'
 
     // 快手sdk
     // implementation 'com.kwai.opensdk.sdk:kwai-opensdk-withauth:3.0.4'
-    implementation 'com.github.kwaisocial:kwai-opensdk-withauth:3.0.4'
+    implementation 'com.github.kwaisocial:kwai-opensdk-withauth:3.7.1'
 }
