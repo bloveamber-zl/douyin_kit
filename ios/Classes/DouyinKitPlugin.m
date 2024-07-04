@@ -33,8 +33,8 @@
                   result:(FlutterResult)result {
     if ([@"registerApp" isEqualToString:call.method]) {
         NSString *clientKey = call.arguments[@"client_key"];
-        // reg
-         [KSApi registerApp:@"ks691302544702903037" universalLink:@"https://lepai-api.faceqianyan.com/app/" delegate:self];
+        // reg   
+         [KSApi registerApp:call.arguments[@"kuaishou_appid"] universalLink:call.arguments[@"applink_url"] delegate:self];
 
         [[DouyinOpenSDKApplicationDelegate sharedInstance] registerAppId:clientKey];
 

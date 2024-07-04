@@ -31,12 +31,16 @@ class Douyin {
   /// 向抖音注册应用
   Future<void> registerApp({
     required String? clientKey,
+    String? kuaishouAppid = '',
+    String? applinkUrl = '',
   }) {
     assert(clientKey?.isNotEmpty ?? false);
     return _channel.invokeMethod<void>(
       'registerApp',
       <String, dynamic>{
         'client_key': clientKey,
+        'kuaishou_appid': kuaishouAppid,
+        'applink_url': applinkUrl,
       },
     );
   }
