@@ -21,7 +21,7 @@ A new flutter plugin project.
   # v1.8.7.1
   s.static_framework = true
   s.subspec 'vendor' do |sp|
-    sp.dependency 'DouyinOpenSDK', '~> 4.1.8'
+    sp.dependency 'DouyinOpenSDK', '= 4.1.8'
     sp.dependency 'KwaiSDK', '~> 3.6.5'
 
   end
